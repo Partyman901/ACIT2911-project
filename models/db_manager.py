@@ -11,7 +11,3 @@ class DatabaseManager:
         employee_list = self.cursor.fetchall()
         # self.connection.commit()
         return employee_list
-
-    def create_database(self):
-        """ Creates the database. Only run if you are having trouble with the current database and need to recreate it for some reason """
-        pass

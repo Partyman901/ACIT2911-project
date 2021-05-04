@@ -14,7 +14,7 @@ class AppController:
                 for employee in employee_list:
                     print(f" {employee[0]:<13}| {employee[1]:<13}| {employee[2]:<17}| {employee[3]:<17}| {employee[4]:<23}| {employee[5]:<20}")
                     print("------------------------------------------------------------------------------------------------------------------------")
-                exit_list_all = input("Press Enter to Continue")
+                exit_list_all = input("Press Enter to Continue ")
 
             elif int(option) == 4: # Closes connection to database and exits program
                 print("Exiting program...")

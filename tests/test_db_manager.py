@@ -58,3 +58,13 @@ def test_list_all(database):
      ('Jesse', 'Lindsey', '16840117 9034', '1-583-753-4219', '2018-07-11 23:56:40', 'Sales and Marketing'), ('Keane', 'Woods', '16790621 1896', '1-296-738-3520', '2020-02-05 11:09:39', 'Customer Service'), 
      ('Martha', 'Freeman', '16291118 1812', '1-632-539-0135', '2020-02-24 08:39:00', 'Quality Assurance'), ('Uriel', 'Cleveland', '16940624 7016', '1-483-523-5114', '2018-04-16 15:03:29', 'Media Relations'), 
      ('Rigel', 'Henry', '16240222 3909', '1-676-917-1539', '2020-02-08 21:40:16', 'Accounting'), ('Charles', 'Copeland', '16520606 9428', '1-332-502-0313', '2018-05-21 17:58:32', 'Legal Department')]
+
+
+def test_return_one(database, number='16291118 1812'):
+    check = database.return_one(number)
+    assert check == ('Martha', 'Freeman', '16291118 1812', '1-632-539-0135', '2020-02-24 08:39:00', 'Quality Assurance')
+
+
+def test_error_return_one(database, number='1'):
+    check = database.return_one(number)
+    assert check == None

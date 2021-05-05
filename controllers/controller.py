@@ -12,7 +12,7 @@ class AppController:
                     print("------------------------------------------------------------------------------------------------------------------------")
                     employee_list = manager.list_all()
                     for employee in employee_list:
-                        print(f" {employee[0]:<13}| {employee[1]:<13}| {employee[2]:<17}| {employee[3]:<17}| {employee[4]:<23}| {employee[5]:<20}")
+                        print(employee)
                         print("------------------------------------------------------------------------------------------------------------------------")
                     exit_list_all = input("Press Enter to Continue ")
 
@@ -22,7 +22,7 @@ class AppController:
                         employee = manager.return_one(search)
                         print("\n First name    Last Name      Employee ID        Phone Number       Last Login               Position")
                         print("------------------------------------------------------------------------------------------------------------------------")
-                        print(f" {employee[0]:<13}| {employee[1]:<13}| {employee[2]:<17}| {employee[3]:<17}| {employee[4]:<23}| {employee[5]:<20}")
+                        print(employee)
                         print("------------------------------------------------------------------------------------------------------------------------")
                         exit_list_all = input("Press Enter to Continue ")
                     else:

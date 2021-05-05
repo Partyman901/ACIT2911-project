@@ -9,5 +9,13 @@ class DatabaseManager:
         """ Function that lists all employees in the database """
         self.cursor.execute("SELECT * FROM myTable")
         employee_list = self.cursor.fetchall()
-        # self.connection.commit()
         return employee_list
+
+    def return_one(self, search):
+        """ Function that returns an employee that matches the ID """
+        self.cursor.execute("SELECT * FROM myTable")
+        employee_list = self.cursor.fetchall()
+        for employee in employee_list:
+            if employee[2] == search:
+                return employee
+        return None # Returns nothing if employee is not found

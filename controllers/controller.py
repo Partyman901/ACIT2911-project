@@ -38,3 +38,4 @@ class AppController:
             except:
                 print("\nPlease enter a valid option")
                 continue
+        return running    

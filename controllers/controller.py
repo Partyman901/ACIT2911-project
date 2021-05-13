@@ -1,4 +1,5 @@
 from models import DatabaseManager
+from views import View
 
 class AppController:
     def run(self):
@@ -8,22 +9,15 @@ class AppController:
             option = input("\nPlease select an option:\n [1] List all employees\n [2] Search employee\n [4] Exit Program\n ")
             try:
                 if int(option) == 1: # Loops through list of employees and prints them
-                    print("\n First name    Last Name      Employee ID        Phone Number       Last Login               Position")
-                    print("------------------------------------------------------------------------------------------------------------------------")
                     employee_list = manager.list_all()
-                    for employee in employee_list:
-                        print(employee)
-                        print("------------------------------------------------------------------------------------------------------------------------")
+                    View().list_employees(employee_list)
                     exit_list_all = input("Press Enter to Continue ")
 
                 elif int(option) == 2: # Loop through the list of employees and find the employee that matches the input 
                     search = input("Enter the Employee ID: ")
                     if manager.return_one(search):
                         employee = manager.return_one(search)
-                        print("\n First name    Last Name      Employee ID        Phone Number       Last Login               Position")
-                        print("------------------------------------------------------------------------------------------------------------------------")
-                        print(employee)
-                        print("------------------------------------------------------------------------------------------------------------------------")
+                        View().one_employee(employee)
                         exit_list_all = input("Press Enter to Continue ")
                     else:
                         print("\nThat employee is not in the database!")

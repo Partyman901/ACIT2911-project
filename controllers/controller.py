@@ -36,9 +36,11 @@ class AppController:
                         already_exist = True
                     if already_exist == False:
                         phone_num = input("Enter employee phone number: ")
-                        last_login = today.strftime("%Y-%m-%d %H:%M:%S")
+                        last_login_time = datetime.now()
+                        last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")
                         position = input("Enter employee position: ")
                         employee = manager.add_employee(first_name, last_name, id, phone_num, last_login, position)
+                        print('\nEmployee has been added!')
 
                 elif int(option) == 4: # Closes connection to database and exits program
                     print("Exiting program...")

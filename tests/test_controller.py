@@ -1,5 +1,5 @@
 import pytest
-from unittest.mock import patch, mock
+import mock
 import builtins
 from controllers import AppController
 

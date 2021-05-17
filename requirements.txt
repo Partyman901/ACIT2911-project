@@ -1,4 +1,3 @@
 pytest
-SQLite
 DB-API
 DateTime

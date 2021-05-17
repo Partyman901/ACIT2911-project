@@ -42,6 +42,6 @@ class DatabaseManager:
         self.connection.commit()
 
     def remove_employee(self,id):
-        sql = f"delete from myTable where IDnumber= {id}"
+        sql = f"delete from myTable where IDnumber= '{id}'"
         self.cursor.execute(sql)
         self.connection.commit()

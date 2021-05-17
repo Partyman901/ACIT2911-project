@@ -42,13 +42,13 @@ class AppController:
                         employee = manager.add_employee(first_name, last_name, id, phone_num, last_login, position)
                         print('\nEmployee has been added!')
 
-                elif int(option) ==4: # Function to delete a employee
+                elif int(option) == 4: # Function to delete a employee
                     id = input("Enter Employee Id : ")
                     if manager.return_one(id):
-                        employee = manager.remove_employee(id)
-                        print("Employee",id," Removed")
+                        manager.remove_employee(id)
+                        print("Employee",id,"Removed")
                     else:
-                        print("Employee does not  exists\nTry Again\n")
+                        print("Employee does not exists\nTry Again\n")
 
 
                 elif int(option) == 5: # Closes connection to database and exits program
@@ -58,7 +58,7 @@ class AppController:
 
                 else:
                     print("\nPlease enter a valid option")
-            except:
-                print("\nPlease enter a valid option")
+            except Exception as error:
+                print(f"\n{error}")
                 continue
         return running

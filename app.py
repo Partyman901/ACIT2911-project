@@ -1,4 +1,4 @@
-from controllers import AppController
+from controllers.controller import AppController
 
 if __name__ == "__main__":
     controller = AppController()

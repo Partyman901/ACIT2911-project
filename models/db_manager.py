@@ -40,8 +40,10 @@ class DatabaseManager:
         data_tuple = (first_name, last_name, id, phone_num, last_login, position)
         self.cursor.execute(sqlite_insert, data_tuple)
         self.connection.commit()
+        return True
 
     def remove_employee(self,id):
         sql = f"delete from myTable where IDnumber= '{id}'"
         self.cursor.execute(sql)
         self.connection.commit()
+        return True

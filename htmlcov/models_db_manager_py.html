@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for models\db_manager.py: 86%</title>
+    <title>Coverage for models\db_manager.py: 100%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -18,13 +18,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>models\db_manager.py</b> :
-            <span class="pc_cov">86%</span>
+            <span class="pc_cov">100%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
-            29 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">25 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">4 missing</button>
+            35 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">35 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
     </div>
@@ -87,19 +87,26 @@
     <p id="t33" class="pln"><span class="n"><a href="#t33">33</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t34" class="run"><span class="n"><a href="#t34">34</a></span><span class="t">    <span class="key">def</span> <span class="nam">add_employee</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">first_name</span><span class="op">,</span> <span class="nam">last_name</span><span class="op">,</span> <span class="nam">id</span><span class="op">,</span> <span class="nam">phone_num</span><span class="op">,</span> <span class="nam">last_login</span><span class="op">,</span> <span class="nam">position</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t35" class="pln"><span class="n"><a href="#t35">35</a></span><span class="t">        <span class="str">"""function which adds new employee to database"""</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t36" class="mis show_mis"><span class="n"><a href="#t36">36</a></span><span class="t">        <span class="nam">sqlite_insert</span> <span class="op">=</span> <span class="str">"""INSERT INTO myTable</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t36" class="run"><span class="n"><a href="#t36">36</a></span><span class="t">        <span class="nam">sqlite_insert</span> <span class="op">=</span> <span class="str">"""INSERT INTO myTable</span>&nbsp;</span><span class="r"></span></p>
     <p id="t37" class="pln"><span class="n"><a href="#t37">37</a></span><span class="t"><span class="str">                          (`First_Name`,`Last_Name`,`IDnumber`,`Phone_Number`,`Last_login_date_time`,`Job_Title`)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t38" class="pln"><span class="n"><a href="#t38">38</a></span><span class="t"><span class="str">                          VALUES (?, ?, ?, ?, ?, ?);"""</span>&nbsp;</span><span class="r"></span></p>
     <p id="t39" class="pln"><span class="n"><a href="#t39">39</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t40" class="mis show_mis"><span class="n"><a href="#t40">40</a></span><span class="t">        <span class="nam">data_tuple</span> <span class="op">=</span> <span class="op">(</span><span class="nam">first_name</span><span class="op">,</span> <span class="nam">last_name</span><span class="op">,</span> <span class="nam">id</span><span class="op">,</span> <span class="nam">phone_num</span><span class="op">,</span> <span class="nam">last_login</span><span class="op">,</span> <span class="nam">position</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t41" class="mis show_mis"><span class="n"><a href="#t41">41</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">cursor</span><span class="op">.</span><span class="nam">execute</span><span class="op">(</span><span class="nam">sqlite_insert</span><span class="op">,</span> <span class="nam">data_tuple</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t42" class="mis show_mis"><span class="n"><a href="#t42">42</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">connection</span><span class="op">.</span><span class="nam">commit</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t40" class="run"><span class="n"><a href="#t40">40</a></span><span class="t">        <span class="nam">data_tuple</span> <span class="op">=</span> <span class="op">(</span><span class="nam">first_name</span><span class="op">,</span> <span class="nam">last_name</span><span class="op">,</span> <span class="nam">id</span><span class="op">,</span> <span class="nam">phone_num</span><span class="op">,</span> <span class="nam">last_login</span><span class="op">,</span> <span class="nam">position</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t41" class="run"><span class="n"><a href="#t41">41</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">cursor</span><span class="op">.</span><span class="nam">execute</span><span class="op">(</span><span class="nam">sqlite_insert</span><span class="op">,</span> <span class="nam">data_tuple</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t42" class="run"><span class="n"><a href="#t42">42</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">connection</span><span class="op">.</span><span class="nam">commit</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t43" class="run"><span class="n"><a href="#t43">43</a></span><span class="t">        <span class="key">return</span> <span class="key">True</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t44" class="pln"><span class="n"><a href="#t44">44</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t45" class="run"><span class="n"><a href="#t45">45</a></span><span class="t">    <span class="key">def</span> <span class="nam">remove_employee</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span><span class="nam">id</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t46" class="run"><span class="n"><a href="#t46">46</a></span><span class="t">        <span class="nam">sql</span> <span class="op">=</span> <span class="str">f"delete from myTable where IDnumber= '{id}'"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t47" class="run"><span class="n"><a href="#t47">47</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">cursor</span><span class="op">.</span><span class="nam">execute</span><span class="op">(</span><span class="nam">sql</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t48" class="run"><span class="n"><a href="#t48">48</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">connection</span><span class="op">.</span><span class="nam">commit</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t49" class="run"><span class="n"><a href="#t49">49</a></span><span class="t">        <span class="key">return</span> <span class="key">True</span>&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.4</a>,
-            created at 2021-05-13 16:33 -0700
+            created at 2021-05-18 11:40 -0700
         </p>
     </div>
 </div>

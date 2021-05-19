@@ -41,12 +41,24 @@ class AppController:
                         print('\nEmployee has been added!')
 
                 elif int(option) == 4: # Function to delete a employee
-                    id = input("Enter Employee Id : ")
+                    id = input("Enter Employee Id: ")
                     if manager.return_one(id):
-                        manager.remove_employee(id)
-                        print("Employee",id,"Removed")
+                        confirm = 'N'
+                        while confirm == 'N':
+                            print()
+                            confirm = input(f'Are you sure you want to delete {id}? [Y|N] ')
+                            if confirm.upper() == 'Y':
+                                manager.remove_employee(id)
+                                print("Employee",id,"Removed")
+                                confirm = 'Y'
+                            elif confirm.upper() == 'N':
+                                print('Employee,', id, 'not deleted')
+                                confirm = 'N'
+                                id = input("Enter Employee Id: ")
+                       
                     else:
                         print("Employee does not exists\nTry Again\n")
+                        
 
 
                 elif int(option) == 5: # Closes connection to database and exits program

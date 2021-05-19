@@ -56,7 +56,9 @@ class AppController:
                                 print('Employee,', id, 'not deleted')
                                 confirm = 'Y'
                             elif confirm.upper() != 'Y' or confirm.upper() != 'N' or confirm.isdigit():
-                                print('Invalid entry please enter again!')
+                                print()
+                                print(f'{confirm} is not a valid entry, please enter Y to delete or N to cancel.')
+                                print()
                                 confirm = 'N'
 
                        

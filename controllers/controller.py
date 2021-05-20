@@ -60,12 +60,8 @@ class AppController:
                                 print(f'{confirm} is not a valid entry, please enter Y to delete or N to cancel.')
                                 print()
                                 confirm = 'N'
-
-                       
                     else:
                         print("Employee does not exists\nTry Again\n")
-                        
-
 
                 elif int(option) == 5: # Closes connection to database and exits program
                     print("Exiting program...")

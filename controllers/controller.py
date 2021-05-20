@@ -54,12 +54,8 @@ class AppController:
                             elif confirm.upper() == 'N':
                                 print('Employee,', id, 'not deleted')
                                 confirm = 'N'
-                                id = input("Enter Employee Id: ")
-                       
                     else:
                         print("Employee does not exists\nTry Again\n")
-                        
-
 
                 elif int(option) == 5: # Closes connection to database and exits program
                     print("Exiting program...")

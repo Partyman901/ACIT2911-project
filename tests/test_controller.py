@@ -64,7 +64,7 @@ def test_invalid_option_controller_integer(controller):
         assert check == False
 
 def test_option_4_no(controller):
-    with mock.patch.object(builtins, "input", side_effect=[4, "16380323 8298", "N", 5]):
+    with mock.patch.object(builtins, "input", side_effect=[4, "16400202 0180", "N", 5, 5]):
         check = controller.run()
         assert check == False
 

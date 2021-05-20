@@ -10,7 +10,7 @@ class AppController:
         running = True
         while running == True:
             manager = DatabaseManager()
-            option = input("\nPlease select an option:\n [1] List all employees\n [2] Search employee\n [3] Add employee\n [4] Exit Program\n ")
+            option = input("\nPlease select an option:\n [1] List all employees\n [2] Search employee\n [3] Add employee\n [4] Delete employee\n [5] Exit Program\n ")
             try:
                 if int(option) == 1: # Loops through list of employees and prints them
                     employee_list = manager.list_all()
@@ -42,14 +42,31 @@ class AppController:
                         employee = manager.add_employee(first_name, last_name, id, phone_num, last_login, position)
                         print('\nEmployee has been added!')
 
-                elif int(option) == 4: # Closes connection to database and exits program
+                elif int(option) == 4: # Function to delete a employee
+                    id = input("Enter Employee Id: ")
+                    if manager.return_one(id):
+                        confirm = 'N'
+                        while confirm == 'N':
+                            print()
+                            confirm = input(f'Are you sure you want to delete {id}? [Y|N] ')
+                            if confirm.upper() == 'Y':
+                                manager.remove_employee(id)
+                                print("Employee",id,"Removed")
+                                confirm = 'Y'
+                            elif confirm.upper() == 'N':
+                                print('Employee,', id, 'not deleted')
+                                confirm = 'N'
+                    else:
+                        print("Employee does not exists\nTry Again\n")
+
+                elif int(option) == 5: # Closes connection to database and exits program
                     print("Exiting program...")
                     manager.connection.close()
                     running = False
 
                 else:
                     print("\nPlease enter a valid option")
-            except:
-                print("\nPlease enter a valid option")
+            except Exception as error:
+                print(f"\n{error}")
                 continue
         return running

@@ -15,7 +15,7 @@ def test_list_all(database):
         assert type(emp) == Employee
 
 
-def test_return_one(database, number='16291118 1812'):
+def test_return_one(database, number='16660308 3129'):
     """ testing that it returns an Employee """
     check = database.return_one(number)
     assert type(check) == Employee

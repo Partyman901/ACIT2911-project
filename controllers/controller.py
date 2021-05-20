@@ -47,6 +47,7 @@ class AppController:
                     if manager.return_one(id):
                         confirm = 'N'
                         while confirm == 'N':
+                            print()
                             confirm = input(f'Are you sure you want to delete {id}? [Y|N] ')
                             if confirm.upper() == 'Y':
                                 manager.remove_employee(id)
@@ -54,13 +55,8 @@ class AppController:
                                 confirm = 'Y'
                             elif confirm.upper() == 'N':
                                 print('Employee,', id, 'not deleted')
-                                confirm = 'Y'
-                            elif confirm.upper() != 'Y' or confirm.upper() != 'N' or confirm.isdigit():
-                                print()
-                                print(f'{confirm} is not a valid entry, please enter Y to delete or N to cancel.')
-                                print()
                                 confirm = 'N'
-
+                                id = input("Enter Employee Id: ")
                        
                     else:
                         print("Employee does not exists\nTry Again\n")

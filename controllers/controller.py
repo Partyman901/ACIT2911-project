@@ -10,7 +10,7 @@ class AppController:
         running = True
         while running == True:
             manager = DatabaseManager()
-            option = input("\nPlease select an option:\n [1] List all employees\n [2] Search employee\n [3] Add employee\n [4] Delete employee\n [5] Exit Program\n ")
+            option = input("\nPlease select an option:\n [1] List all employees\n [2] Search employee\n [3] Add employee\n [4] Delete employee\n [5] Update employee\n [6] Exit Program\n ")
             try:
                 if int(option) == 1: # Loops through list of employees and prints them
                     employee_list = manager.list_all()
@@ -59,7 +59,25 @@ class AppController:
                     else:
                         print("Employee does not exists\nTry Again\n")
 
-                elif int(option) == 5: # Closes connection to database and exits program
+                elif int(option) == 5: # Function to update an employee 
+                    id = input("Enter Employee Id: ")
+                    if manager.return_one(id):
+                        first_name = input('New first name: ')
+                        last_name = input('New last name: ')
+                        phone_num = input('New phone number: ')
+                        position = input('New job position: ')
+                        last_login_time = datetime.now()
+                        last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")
+                        confirm = input(f'Are you sure you want to update {id}? [Y|N] ')
+                        if confirm.upper() == 'Y':
+                            employee = manager.update_employee(first_name, last_name, id, phone_num, last_login, position)
+                            print(f'Employee, {id} has been updated!')
+                        elif confirm.upper() == 'N':
+                            print(f'Employee, {id}, not updated')
+                    else:
+                        print("Employee does not exists\nTry Again\n")
+
+                elif int(option) == 6: # Closes connection to database and exits program
                     print("Exiting program...")
                     manager.connection.close()
                     running = False

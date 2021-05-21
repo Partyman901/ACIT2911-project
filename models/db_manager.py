@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from sqlite3.dbapi2 import Cursor, SQLITE_INSERT
+from sqlite3.dbapi2 import Cursor, SQLITE_INSERT, SQLITE_UPDATE
 from models.employee import Employee
 
 class DatabaseManager:
@@ -45,5 +45,16 @@ class DatabaseManager:
     def remove_employee(self,id):
         sql = f"delete from myTable where IDnumber= '{id}'"
         self.cursor.execute(sql)
+        self.connection.commit()
+        return True
+
+    def update_employee(self,first_name, last_name, id, phone_num, last_login, position):
+        """ function which updates current employee in the database """
+        sqlite_update = """UPDATE myTable
+                        SET First_Name = ?, Last_Name = ?, IDnumber= ?, 
+                        Phone_Number = ?, Last_login_date_time = ?, Job_Title = ?
+                        WHERE IDnumber = ?;"""
+        data_tuple = (first_name, last_name, id, phone_num, last_login, position, id)
+        self.cursor.execute(sqlite_update, data_tuple)
         self.connection.commit()
         return True

@@ -55,7 +55,7 @@ class AppController:
                                 confirm = 'Y'
                             elif confirm.upper() == 'N':
                                 print('Employee,', id, 'not deleted')
-                                confirm = 'N'
+                                confirm = 'Y'
                     else:
                         print("Employee does not exists\nTry Again\n")
 

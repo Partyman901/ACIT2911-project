@@ -64,9 +64,9 @@ class AppController:
 
                 elif int(option) == 5: # Function to update an employee 
                     id = input("Enter Employee Id: ")
-                    print(f'Press "Enter" to keep the pre-existing data')
-                    if manager.return_one(id):
-                        employee = manager.return_one(id)
+                    employee = manager.return_one(id)
+                    if employee:
+                        print(f'Press "Enter" to keep the pre-existing data')
                         employee_values = [employee.first_name, employee.last_name, employee.phone_num, employee.position]
                         first_name = input('New first name: ')
                         if first_name == '':

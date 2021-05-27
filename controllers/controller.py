@@ -1,14 +1,19 @@
 from models.employee import Employee
 from models import DatabaseManager
 from views import View
+from datetime import date, datetime
+
+
 
 class AppController:
+    """ This is the controller for the whole employee tracker app """
     def run(self):
         today = date.today()
         running = True
         while running == True:
             manager = DatabaseManager()
             option = input("\nPlease select an option:\n [1] List all employees\n [2] Search employee\n [3] Add employee\n [4] Delete employee\n [5] Update employee\n [6] Exit Program\n ")
+            # shows all options available to the user
             try:
                 if int(option) == 1: # Loops through list of employees and prints them
                     employee_list = manager.list_all()
@@ -24,7 +29,7 @@ class AppController:
                     else:
                         print("\nThat employee is not in the database!")
                 
-                elif int(option) == 3:
+                elif int(option) == 3: # Adding an employee to the database
                     already_exist = False
                     first_name = input("Enter Employee First Name: ")
                     last_name = input("Enter Employee Last name: ")
@@ -40,7 +45,7 @@ class AppController:
                         employee = manager.add_employee(first_name, last_name, id, phone_num, last_login, position)
                         print('\nEmployee has been added!')
 
-                elif int(option) == 4: # Function to delete a employee
+                elif int(option) == 4: # Function to delete an employee
                     id = input("Enter Employee Id: ")
                     if manager.return_one(id):
                         confirm = 'N'
@@ -85,4 +90,4 @@ class AppController:
             except Exception as error:
                 print(f"\n{error}")
                 continue
-        return running
+        return running # To check our test coverage

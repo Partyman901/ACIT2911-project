@@ -2,6 +2,8 @@ import pytest
 from models import DatabaseManager
 from models import Employee
 
+
+
 @pytest.fixture
 def database():
     """ creating a fixture to test DatabaseManager class """
@@ -26,6 +28,7 @@ def test_error_return_one(database, number='1'):
     check = database.return_one(number)
     assert check == None
 
+
 def test_add_employee(database):
     """ testing for return in adding of employee """
     first_name = "raymond"
@@ -36,6 +39,7 @@ def test_add_employee(database):
     position = "manager"
     check = database.add_employee(first_name, last_name, id, phone_number, last_login, position)
     assert check == True
+
 
 def test_remove_employee(database):
     """ testing for delete employee """

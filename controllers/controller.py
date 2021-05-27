@@ -64,11 +64,22 @@ class AppController:
 
                 elif int(option) == 5: # Function to update an employee 
                     id = input("Enter Employee Id: ")
+                    print(f'Press "Enter" to keep the pre-existing data')
                     if manager.return_one(id):
+                        employee = manager.return_one(id)
+                        employee_values = [employee.first_name, employee.last_name, employee.phone_num, employee.position]
                         first_name = input('New first name: ')
+                        if first_name == '':
+                            first_name = employee_values[0]
                         last_name = input('New last name: ')
+                        if last_name == '':
+                            last_name = employee_values[1]
                         phone_num = input('New phone number: ')
+                        if phone_num == '':
+                            phone_num = employee_values[2]
                         position = input('New job position: ')
+                        if position == '':
+                            position = employee_values[3]
                         last_login_time = datetime.now()
                         last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")
                         confirm = input(f'Are you sure you want to update {id}? [Y|N] ')

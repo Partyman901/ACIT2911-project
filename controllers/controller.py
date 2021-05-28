@@ -30,23 +30,36 @@ class AppController:
                         print("\nThat employee is not in the database!")
                 
                 elif int(option) == 3: # Adding an employee to the database
-                    already_exist = False
-                    first_name = input("Enter Employee First Name: ")
-                    last_name = input("Enter Employee Last name: ")
-                    id = input("Enter Employee ID number: ")
-                    if manager.return_one(id):
-                        print("\nEmployee ID already exists")
-                        already_exist = True
-                    elif id == '':
-                        print('Employee ID must be filled. Please enter again.')
-                        already_exist = True
-                    elif already_exist == False:
+                    already_exist = True
+                    blank_entry = True
+                    while blank_entry == True and already_exist == True:
+                        first_name = input("Enter Employee First Name: ")
+                        last_name = input("Enter Employee Last name: ")
+                        id = input("Enter Employee ID number: ")
                         phone_num = input("Enter employee phone number: ")
                         last_login_time = datetime.now()
                         last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")
                         position = input("Enter employee position: ")
-                        employee = manager.add_employee(first_name, last_name, id, phone_num, last_login, position)
-                        print('\nEmployee has been added!')
+                        if first_name == '':
+                            print('Employee first name must be filled. Please enter again.')
+                            blank_entry = True
+                        elif last_name == '':
+                            print('Employee last name must be filled. Please enter again.')
+                            blank_entry = True
+                        elif manager.return_one(id):
+                            print("\nEmployee ID already exists")
+                            already_exist = True
+                        elif id == '':
+                            print('Employee ID must be filled. Please enter again.')
+                            blank_entry = True
+                        elif position == '':
+                            print('Employee position must be filled. Please enter again.')
+                            blank_entry = True
+                        else:
+                            employee = manager.add_employee(first_name, last_name, id, phone_num, last_login, position)
+                            print('\nEmployee has been added!')
+                            already_exist = False
+                            blank_entry = False
 
                 elif int(option) == 4: # Function to delete an employee
                     id = input("Enter Employee Id: ")

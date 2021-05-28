@@ -45,7 +45,7 @@ def test_option_3_True(controller):
         assert check == False
 
 def test_option_3(controller):
-    with mock.patch.object(builtins, 'input', side_effect=[3, "mo","mohseni", "15151512 2020", 6, 6]):
+    with mock.patch.object(builtins, 'input', side_effect=[3, "mo","mohseni", "15151512 2020", 6]):
         """ test to go through option 3 and try to add an employee ID that already exists """
         check = controller.run()
         assert check == False
@@ -76,12 +76,33 @@ def test_invalid_option_controller_numeric(controller):
 
 def test_option_4_no(controller):
     """ test to go through option 4 with 'N' to confirmation """
-    with mock.patch.object(builtins, "input", side_effect=[4, "16400202 0180", "N", 6, 6]):
+    with mock.patch.object(builtins, "input", side_effect=[4, "16400202 0180", "N", 6]):
         check = controller.run()
         assert check == False
 
 def test_4_invalid(controller):
     """ test to go through option 4 with an invalid entry when asking for confirmation """
     with mock.patch.object(builtins, "input", side_effect=[4, "16380323 8298", "A", "N", 6]):
+        check = controller.run()
+        assert check == False
+
+
+def test_option_5_valid(controller):
+    """ test to go through option 5 with a valid entry that updates database """
+    with mock.patch.object(builtins, "input", side_effect=[5, "16800109 5739", "", "", "", "", "Y", 6]):
+        check = controller.run()
+        assert check == False
+
+
+def test_option_5_no(controller):
+    """ test to go through option 5 and say N when confirming """
+    with mock.patch.object(builtins, "input", side_effect=[5, "16800109 5739", "", "", "", "", "N", 6]):
+        check = controller.run()
+        assert check == False
+
+
+def test_option_5_nonexistentID(controller):
+    """ test to go through option 5, but with an non-existent ID """
+    with mock.patch.object(builtins, "input", side_effect=[5, "123 6790", 6]):
         check = controller.run()
         assert check == False

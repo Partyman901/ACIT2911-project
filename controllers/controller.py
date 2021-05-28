@@ -30,21 +30,25 @@ class AppController:
                         print("\nThat employee is not in the database!")
                 
                 elif int(option) == 3: # Adding an employee to the database
-                    already_exist = False
                     first_name = input("Enter Employee First Name: ")
                     last_name = input("Enter Employee Last name: ")
                     id = input("Enter Employee ID number: ")
-                    if manager.return_one(id):
+                    phone_num = input("Enter employee phone number: ")
+                    last_login_time = datetime.now()
+                    last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")
+                    position = input("Enter employee position: ")
+                    # error checking below, returns to main menu
+                    if first_name == '':
+                        print('\nEmployee first name must be filled.')
+                    elif last_name == '':
+                        print('\nEmployee last name must be filled.')
+                    elif manager.return_one(id):
                         print("\nEmployee ID already exists")
-                        already_exist = True
                     elif id == '':
-                        print('Employee ID must be filled. Please enter again.')
-                        already_exist = True
-                    elif already_exist == False:
-                        phone_num = input("Enter employee phone number: ")
-                        last_login_time = datetime.now()
-                        last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")
-                        position = input("Enter employee position: ")
+                        print('\nEmployee ID must be filled.')
+                    elif position == '':
+                        print('\nEmployee position must be filled.')
+                    else:
                         employee = manager.add_employee(first_name, last_name, id, phone_num, last_login, position)
                         print('\nEmployee has been added!')
 
@@ -72,6 +76,7 @@ class AppController:
                         print(f'Press "Enter" to keep the pre-existing data')
                         employee_values = [employee.first_name, employee.last_name, employee.phone_num, employee.position]
                         first_name = input('New first name: ')
+                        # if field does not need to be updated, user presses 'Enter' key
                         if first_name == '':
                             first_name = employee_values[0]
                         last_name = input('New last name: ')

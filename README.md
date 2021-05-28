@@ -5,26 +5,26 @@ Technology Used :
 
 Application installation :
 
-1.Install python from https://www.python.org/downloads/release/python-395/
-2.Download the zip folder from https://github.com/Partyman901/ACIT2911-project.git
+1.Install python from https://www.python.org/downloads/release/python-395/<br>
+2.Download the zip folder from https://github.com/Partyman901/ACIT2911-project.git<br>
 
 <img width="1120" alt="Zip folder" src="https://user-images.githubusercontent.com/78824700/119943504-fa6d9180-bf47-11eb-80e6-c4f4a211f471.PNG">
 
 Application usage:
 
-1.After downloading the zip file uncompress it onto your system
-2.To run the application click on app.py
-3.The main menu of the application will appear. 
+1.After downloading the zip file uncompress it onto your system<br>
+2.To run the application click on app.py<br>
+3.The main menu of the application will appear.<br>
 
 <img width="1128" alt="main menu" src="https://user-images.githubusercontent.com/78824700/119944050-a8793b80-bf48-11eb-8ee6-e12cd28bdf3f.PNG">
 
-This menu will give you different options to select from
- [1] List all employees
- [2] Search employee
- [3] Add employee
- [4] Delete employee
- [5] Update employee
- [6] Exit Program
+This menu will give you different options to select from<br>
+ [1] List all employees<br>
+ [2] Search employee<br>
+ [3] Add employee<br>
+ [4] Delete employee<br>
+ [5] Update employee<br>
+ [6] Exit Program<br>
 
 
 [1] List all Employees: This feature allows users to see all the employees in the database with their first name, last name, employee id number, contact number, last login date, and time along with their position in the company.
@@ -51,8 +51,8 @@ This menu will give you different options to select from
 
 
 Credits 
-Mohseni, Seyed-Mohammad(Scrum Master): https://github.com/mohseni929
-Lee, Raymond (Product Owner ): https://github.com/raymanl33
-Nguyen, Steven (Developer): https://github.com/Partyman901
-Nizzar, Shaniah (Developer): https://github.com/shaniahn
+Mohseni, Seyed-Mohammad(Scrum Master): https://github.com/mohseni929 <br>
+Lee, Raymond (Product Owner ): https://github.com/raymanl33 <br>
+Nguyen, Steven (Developer): https://github.com/Partyman901 <br>
+Nizzar, Shaniah (Developer): https://github.com/shaniahn <br>
 Parihar, Jayant (Developer ): https://github.com/jayantparihar 

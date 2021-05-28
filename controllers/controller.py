@@ -37,7 +37,10 @@ class AppController:
                     if manager.return_one(id):
                         print("\nEmployee ID already exists")
                         already_exist = True
-                    if already_exist == False:
+                    elif id == '':
+                        print('Employee ID must be filled. Please enter again.')
+                        already_exist = True
+                    elif already_exist == False:
                         phone_num = input("Enter employee phone number: ")
                         last_login_time = datetime.now()
                         last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")

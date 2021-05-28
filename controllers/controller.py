@@ -37,6 +37,7 @@ class AppController:
                     last_login_time = datetime.now()
                     last_login = last_login_time.strftime("%Y-%m-%d %H:%M:%S")
                     position = input("Enter employee position: ")
+                    # error checking below, returns to main menu
                     if first_name == '':
                         print('\nEmployee first name must be filled.')
                     elif last_name == '':
@@ -75,6 +76,7 @@ class AppController:
                         print(f'Press "Enter" to keep the pre-existing data')
                         employee_values = [employee.first_name, employee.last_name, employee.phone_num, employee.position]
                         first_name = input('New first name: ')
+                        # if field does not need to be updated, user presses 'Enter' key
                         if first_name == '':
                             first_name = employee_values[0]
                         last_name = input('New last name: ')
